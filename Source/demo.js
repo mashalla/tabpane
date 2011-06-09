@@ -12,10 +12,18 @@ authors:
 
 version: 0.1
 
-requires: -
+requires:
+core/1.2.4:
+- Class
+- Class.Extras 
+- Element 
+- Element.Event
+- Selectors
+more/1.2.4:
+- Element.Delegation
 
-provides: Accessible TabPane
-
+provides: 
+- Accessible TabPane
 ...
 */
 document.addEvent('domready', function(){
