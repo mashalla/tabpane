@@ -1,6 +1,8 @@
 Accessible TabPanel
 ===========
 
+Plugin based on original tab pane by <a href="http://mootools.net/forge/profile/akaIDIOT">akaIDIOT</a>. Its functionally is enhanced for accessible use (keyboard navigation and screen reader support).
+
 Simple Tab Pane is a very simple MooTools class that allows you to create a tab pane from a single element. All it needs is a selector for the tabs (the headers, so to say) and a selector for the corresponding contents. 
 
 Because all the tab switching is based on delegated events, no effort is needed to add tabs: simply add elements with the correct class names (or tag names if you specified your selector as such) and you're done! 
@@ -12,8 +14,6 @@ Styling is left completely up to the user. Whether you want an inline list as th
 A demo is included in the download package. 
 
 ![Screenshot](http://www.accessiblemootoolsdemo.iao.fraunhofer.de/Mootools_Widgets/img/TabPane.png)
-
-Plugin based on original tab pane by <a href="http://mootools.net/forge/profile/akaIDIOT">akaIDIOT</a>
 
 How To Use
 ----------
