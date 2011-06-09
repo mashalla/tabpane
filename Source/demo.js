@@ -1,27 +1,19 @@
 /*
 ---
-description: demo application 
-
+description: accessible dialog based on ascribe dialog
+ 
 license: MIT-style
-
-authors: 
--akaIDIOT
--Eva Loesch
--Philip Fieber
--Christian Merz
-
+ 
+authors:
+- Christian Merz
+ 
 requires:
--core/1.2.4: Class
--core/1.2.4: Class.Extras
--core/1.2.4: Element
--core/1.2.4: Element.Event
--core/1.2.4: Selectors
--more/1.2.4: Element.Delegation
-
-provides: Accessible TabPane
-
+- core/1.3: '*'
+- more/1.2.4: Fx.Elements
+ 
+provides: Accessible Dialog
+ 
 version: 1.0
-
 ...
 */
 document.addEvent('domready', function(){
