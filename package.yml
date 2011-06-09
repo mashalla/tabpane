@@ -1,0 +1,11 @@
+name: Accessible TabPanel
+author: mashalla
+category: Widgets
+tags: [TabPanel, tabs, organize, element, window, style]
+#docs: http://ascribedata.com/moo/dialog/
+demo: http://mashalla.github.com/tabpane
+current: 1.0
+
+sources:
+  - "Source/tabPane.js"
+  - "Source/demo.js"
