@@ -22,7 +22,8 @@ core/1.2.4:
 more/1.2.4:
 - Element.Delegation
 
-provides: TabPane
+provides: Accessible TabPane
+
 ...
 */
 document.addEvent('domready', function(){
