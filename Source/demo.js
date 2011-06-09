@@ -18,7 +18,7 @@ requires:
 - core/1.2.4: Selectors
 - more/1.2.4: Element.Delegation
  
-provides: Accessible Dialog
+provides: accessible tab pane
  
 version: 1.0
 ...

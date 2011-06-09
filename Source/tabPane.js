@@ -3,26 +3,24 @@
 description: Accessible TabPane Class 
 
 license: MIT-style
-
-authors: 
--akaIDIOT
--Eva Loesch
--Philip Fieber
--Christian Merz
-
-version: 0.1
-
+ 
+authors:
+- akaIDIOT
+- Eva Loesch
+- Philip Fieber
+- Christian Merz
+ 
 requires:
-core/1.2.4:
-- Class
-- Class.Extras 
-- Element 
-- Element.Event
-- Selectors
-more/1.2.4:
-- Element.Delegation
-
-provides: TabPane
+- core/1.2.4: Class
+- core/1.2.4: Class.Extras
+- core/1.2.4: Element
+- core/1.2.4: Element.Event
+- core/1.2.4: Selectors
+- more/1.2.4: Element.Delegation
+ 
+provides: accessible tab pane
+ 
+version: 1.0
 ...
 */
 (function() {
