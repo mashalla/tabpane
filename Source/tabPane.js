@@ -1,28 +1,42 @@
 /*
 ---
-description: Accessible TabPane Class 
 
-license: MIT-style
- 
+description: changes and extensions to tab pane class to be conform
+to the Tab Panel widget according to WAI-ARIA-specification.
+(http://www.w3.org/TR/wai-aria-practices/#tabpanel)
+Changes are clearly marked in the code.
+
 authors:
-- akaIDIOT
-- Eva Loesch
-- Philip Fieber
-- Christian Merz
- 
-requires:
-- core/1.2.4: Class
-- core/1.2.4: Class.Extras
-- core/1.2.4: Element
-- core/1.2.4: Element.Event
-- core/1.2.4: Selectors
-- more/1.2.4: Element.Delegation
- 
-provides: accessible tab pane
- 
-version: 1.0
+-Eva L�sch
+-Philip Fieber
+-Christian Merz
+  
 ...
-*/
+ */
+
+/*
+ ---
+ description: TabPane Class 
+
+ license: MIT-style
+
+ authors: akaIDIOT
+
+ version: 0.1
+
+ requires:
+ core/1.2.4:
+ - Class
+ - Class.Extras 
+ - Element 
+ - Element.Event
+ - Selectors
+ more/1.2.4:
+ - Element.Delegation
+
+ provides: TabPane
+ ...
+ */
 (function() {
 
 	var $ = document.id;
@@ -130,9 +144,7 @@ version: 1.0
 											keydown: function(event){
 											
 												keyCode = this.getKeyCode(event);
-												
 												switch (keyCode) {
-												
 													// delete via enter or space
 													case this.keys.KEY_ENTER:
 													case this.keys.KEY_SPACE:
@@ -142,6 +154,34 @@ version: 1.0
 														break;
 													case this.keys.KEY_TAB:
 														element.getNext().setProperty('tabindex', '-1');
+														break;
+													case this.keys.KEY_UP:
+														if (event.control) {
+								                    		event.stop();
+															element.focus();
+															this.options.ctrl = false;
+															break;
+															
+														}
+														else {
+															if (this.options.tabWithFocus == null) {
+																break;
+															}
+															
+															if (anzTabs <= 1) {
+																break;
+															}
+															
+															if (previous == null) {
+																this.activateTab(last, lastContent);
+															}
+															
+															else {
+																this.activateTab(previous, previousContent);
+															}
+								                            this.inactivateTab(thiz, thisContent);
+								                            break;
+														}
 														break;
 													default:
 														break;
@@ -348,6 +388,9 @@ version: 1.0
 
 				// set all attributes for activating a Tab
 				activateTab : function(tab, content) {
+					if(tab.getProperty('tabindex') == 0)
+						return
+					
 					setTimeout(function() {
 						tab.focus();
 					}, 0);
@@ -366,6 +409,9 @@ version: 1.0
 
 				// set all attributes for inactivating a Tab
 				inactivateTab : function(tab, content) {
+					if(!tab || tab.getProperty('tabindex') == -1)
+						return
+					
 					tab.setProperty('tabindex', -1);
 					tab.removeClass(this.options.activeClass);
 					content.setStyle('display', 'none');
@@ -436,6 +482,7 @@ version: 1.0
 
 					case this.keys.KEY_LEFT:
 
+                        event.stop();
 						if (this.options.tabWithFocus == null) {
 							// alert('key left focus null');
 							break;
@@ -464,6 +511,7 @@ version: 1.0
 						break;
 
 					case this.keys.KEY_UP:
+                        event.stop();
 						if (event.control) {
                     		event.stop();
 							if (this.options.panelWithFocus == null) {
@@ -518,6 +566,7 @@ version: 1.0
 							break;
 						}
 
+                        event.stop();
 						// console.log('should work');
 						if (next == null) {
 							this.activateTab(first, firstContent);
@@ -535,7 +584,6 @@ version: 1.0
 						}
 
 						if (this.options.ctrl) {
-
 							if (this.options.panelWithFocus == null) {
 
 								break;
@@ -635,7 +683,9 @@ version: 1.0
 						if (anzTabs <= 1) {
 							break;
 						}
-
+						event.stop();
+						if(first == thiz)
+							break
 						this.activateTab(first, firstContent);
 						this.inactivateTab(thiz, thisContent);
 
@@ -653,7 +703,9 @@ version: 1.0
 						if (anzTabs <= 1) {
 							break;
 						}
-
+						event.stop();
+						if(last == thiz)
+							break
 						this.activateTab(last, lastContent);
 						this.inactivateTab(thiz, thisContent);
 
