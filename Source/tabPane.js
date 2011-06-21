@@ -1,42 +1,28 @@
 /*
 ---
-
-description: changes and extensions to tab pane class to be conform
-to the Tab Panel widget according to WAI-ARIA-specification.
-(http://www.w3.org/TR/wai-aria-practices/#tabpanel)
-Changes are clearly marked in the code.
-
+description: accessible tab pane 
+ 
+license: MIT-style
+ 
 authors:
--Eva L�sch
--Philip Fieber
--Christian Merz
-  
+- akaIDIOT
+- Eva Loesch
+- Philip Fieber
+- Christian Merz
+ 
+requires:
+- core/1.2.4: Class
+- core/1.2.4: Class.Extras
+- core/1.2.4: Element
+- core/1.2.4: Element.Event
+- core/1.2.4: Selectors
+- more/1.2.4: Element.Delegation
+ 
+provides: accessible tab pane
+ 
+version: 1.0
 ...
- */
-
-/*
- ---
- description: TabPane Class 
-
- license: MIT-style
-
- authors: akaIDIOT
-
- version: 0.1
-
- requires:
- core/1.2.4:
- - Class
- - Class.Extras 
- - Element 
- - Element.Event
- - Selectors
- more/1.2.4:
- - Element.Delegation
-
- provides: TabPane
- ...
- */
+*/
 (function() {
 
 	var $ = document.id;
