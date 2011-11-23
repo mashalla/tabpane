@@ -106,7 +106,9 @@ version: 1.0
 								// insert close image
 								var img = new Element('img', {
 									src: 'img/close.gif',
-									alt: 'Remove tab with space or enter'
+									alt: 'Remove tab with space or enter',
+									width: '8px',
+									height:'7px'
 								});
 
 								if (element.getChildren()[0] != null) {
@@ -511,27 +513,16 @@ version: 1.0
 							
 						}
 						else {
-							if (this.options.tabWithFocus == null) {
-								break;
-							}
-							
-							if (anzTabs <= 1) {
-								break;
-							}
-							
-							if (previous == null) {
-								this.activateTab(last, lastContent);
-							}
-							
-							else {
-								this.activateTab(previous, previousContent);
-							}
-                            this.inactivateTab(thiz, thisContent);
-                            break;
+							event.stop();
+							thiz.focus();
+							break;
 						}
 
 
 					case this.keys.KEY_DOWN:
+						event.stop();
+						thisContent.focus();
+						break;
 
 					case this.keys.KEY_RIGHT:
 

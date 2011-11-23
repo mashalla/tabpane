@@ -1,64 +1,49 @@
-<!DOCTYPE html 
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-    <title>Simple MooTools TabPane component</title>
-    <script src="../Source/mootools-core.js" type="text/javascript"></script>
-    <script src="../Source/mootools-more.js" type="text/javascript"></script>
-    <script src="../Source/tabPane.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        document.addEvent('domready', function() {
-            var tabPane = new TabPane('demo_small');
-
-            $('demo_small').addEvent('click:relay(.remove)', function(e) {
-                new Event(e).stop();
-                var parent = this.getParent('.tab');
-                var index = $('demo').getElements('.tab').indexOf(parent);
-                tabPane.closeTab(index);
-            });
-
-
-        });
-    </script>
-    <link href="styles.css" type="text/css" rel="stylesheet" />
-</head>
-
-<body>
-
-<h1>Tab pane</h1>
-
-                <span id="demo_small">
-                    <ul class="tabs">
-                    	 <li class="tab">
-                            Apple <span class="remove"></span>
-                        </li>
-                        <li class="tab">
-                            Banana <span class="remove"></span>
-                        </li>
-                        <li class="tab">
-                            Clementine <span class="remove"></span>
-                        </li>
-                        <li class="tab">
-                            Orange <span class="remove"></span>
-                        </li>
-                    </ul>
-                    <div class="content">
-                        The apple is the pomaceous fruit of the apple tree, species Malus domestica in the rose family (Rosaceae), and is a perennial. It is one of the most widely cultivated tree fruits, and the most widely known of the many members of genus Malus that are used by humans.
-                    </div>
-                    <div class="content">
-                        Banana is the common name for herbaceous plants of the genus Musa and for the fruit they produce. Bananas come in a variety of sizes and colors when ripe, including yellow, purple, and red. In popular culture and commerce, "banana" usually refers to soft, sweet "dessert" bananas. By contrast, Musa cultivars with firmer, starchier fruit are called plantains. Many varieties of bananas are perennial. Refer to the Musa article for a list of the varieties of bananas and plantains.
-                    </div>
-                    <div class="content">
-                        A clementine is a hesperidium (type of berry), of a variety of mandarin orange (Citrus reticulata) so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines separate easily into seven to fourteen moderately-juicy segments. They are very easy to peel, like a tangerine, but are almost always seedless. Clementines are, thus, also known as seedless tangerines. They are typically juicy and sweet, with less acid than oranges.
-                    </div>
-                    <div class="content">
-                        Oranges originated in Southeast Asia. The fruit of Citrus sinensis is called sweet orange to distinguish it from Citrus aurantium, the bitter orange. The name is thought to ultimately derive from the Sanskrit for the orange tree, with its final form developing after passing through numerous intermediate languages.
-                    </div>
-                </span>
-
-</body>
-
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=100">
+		<title>Accessible Widgets for MooTools</title>
+		<!-- Embedded Mootools Core und More -->
+		<script src="../Source/mootools-core.js" type="text/javascript"></script>
+		<script src="../Source/mootools-more.js" type="text/javascript"></script>
+		<!-- General CSS File -->
+		<link href="demo.css" type="text/css" rel="stylesheet" />
+		<!-- Source: -->
+		<script type="text/javascript" src="../Source/tabPane.js"></script>
+		<script type="text/javascript" src="../Source/demo.js"></script>
+	</head>
+	<body>
+		<div class="sa_demo_headerScreen">
+			<span><a href="http://www.aegis-project.eu/" title="AEGIS"><img src="img/aegis_logo.png" alt="AEGIS" border="0" style="float: left" width="37px;"/></a> <h2>&nbsp;&nbsp;&nbsp;Accessible MooTools Widget - Tab Panel</h2></span>
+		</div>
+		<div class="sa_demo_contentScreen">
+			<span id="demo_small">
+				<ul class="tabs">
+					<li class="tab">
+						Apple <span class="remove"></span>
+					</li>
+					<li class="tab">
+						Banana <span class="remove"></span>
+					</li>
+					<li class="tab">
+						Clementine <span class="remove"></span>
+					</li>
+					<li class="tab">
+						Orange <span class="remove"></span>
+					</li>
+				</ul>
+				<div class="content">
+					The apple is the pomaceous fruit of the apple tree, species Malus domestica in the rose family (Rosaceae), and is a perennial. It is one of the most widely cultivated tree fruits, and the most widely known of the many members of genus Malus that are used by humans.
+				</div>
+				<div class="content">
+					Banana is the common name for herbaceous plants of the genus Musa and for the fruit they produce. Bananas come in a variety of sizes and colors when ripe, including yellow, purple, and red. In popular culture and commerce, "banana" usually refers to soft, sweet "dessert" bananas. By contrast, Musa cultivars with firmer, starchier fruit are called plantains. Many varieties of bananas are perennial. Refer to the Musa article for a list of the varieties of bananas and plantains.
+				</div>
+				<div class="content">
+					A clementine is a hesperidium (type of berry), of a variety of mandarin orange (Citrus reticulata) so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines separate easily into seven to fourteen moderately-juicy segments. They are very easy to peel, like a tangerine, but are almost always seedless. Clementines are, thus, also known as seedless tangerines. They are typically juicy and sweet, with less acid than oranges.
+				</div>
+				<div class="content">
+					Oranges originated in Southeast Asia. The fruit of Citrus sinensis is called sweet orange to distinguish it from Citrus aurantium, the bitter orange. The name is thought to ultimately derive from the Sanskrit for the orange tree, with its final form developing after passing through numerous intermediate languages.
+				</div> </span>
+		</div>
+	</body>
 </html>

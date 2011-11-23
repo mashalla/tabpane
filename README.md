@@ -13,7 +13,7 @@ Styling is left completely up to the user. Whether you want an inline list as th
 
 A demo is included in the download package. 
 
-![Screenshot](http://www.accessiblemootoolsdemo.iao.fraunhofer.de/Mootools_Widgets/img/TabPanel.png)
+![Screenshot](http://www.accessiblemootoolsdemo.iao.fraunhofer.de/Mootools_Widgets/WidgetThumbs/Tabpanel.png)
 
 How To Use
 ----------
