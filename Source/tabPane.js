@@ -470,7 +470,7 @@ version: 1.0
 
 					case this.keys.KEY_LEFT:
 
-                        event.stop();
+                        /*event.stop();*/
 						if (this.options.tabWithFocus == null) {
 							// alert('key left focus null');
 							break;
@@ -543,7 +543,7 @@ version: 1.0
 							break;
 						}
 
-                        event.stop();
+                        /*event.stop();*/
 						// console.log('should work');
 						if (next == null) {
 							this.activateTab(first, firstContent);
